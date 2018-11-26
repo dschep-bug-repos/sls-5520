@@ -102,3 +102,9 @@ functions:
 #     NewOutput:
 #       Description: "Description for the output"
 #       Value: "Some output value"
+custom:
+  bucket: ${env:BUCKET, 'sls-5520'}
+  mode:
+    dev: cloud
+  externalConfigFromS3:
+    foobar: ${file(./external.${self:custom.mode.${opt:stage, self:provider.stage}}.yml):foobar}

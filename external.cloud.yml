@@ -1,0 +1,1 @@
+foobar: ${s3:${self:custom.bucket}/foobar}
